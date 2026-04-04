@@ -116,9 +116,6 @@ export default function App() {
             onChange={handleInputChange}
           />
           <p className="hint">Only numbers are allowed.</p>
-          <p className="hint">
-            Secret key source: <code>{querySecretKey ? 'query param' : 'json fallback'}</code>
-          </p>
         </div>
 
         {status.message && (
