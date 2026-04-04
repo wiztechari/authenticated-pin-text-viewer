@@ -1,46 +1,21 @@
-# GitHub PIN Lookup React App - Local JSON Version
+# GitHub PIN Lookup React App (Local JSON)
 
-This version does not call any external API.
+This React + Vite app reads mock JSON files from `public/mock-api/` inside the same project.
 
-It fetches JSON files from inside the same React app using files like:
-- public/mock-api/123456.json
-- public/mock-api/654321.json
+## How it works
+- Enter a 6-digit PIN
+- The app fetches `/mock-api/<PIN>.json` from the same site
+- No external API is called
+
+## Sample files
+- `public/mock-api/123456.json`
+- `public/mock-api/654321.json`
 
 ## Run
-
 ```bash
 npm install
 npm run dev
 ```
 
-## Build
-
-```bash
-npm run build
-```
-
-## Important
-
-Before deploying to GitHub Pages, update `vite.config.js`:
-
-```js
-base: '/your-repo-name/'
-```
-
-Replace `your-repo-name` with your actual repository name.
-
-## How it works
-
-For PIN `123456`, the app fetches:
-
-```text
-/your-repo-name/mock-api/123456.json
-```
-
-For PIN `654321`, the app fetches:
-
-```text
-/your-repo-name/mock-api/654321.json
-```
-
-If the file does not exist, the app shows a not found message.
+## Deploy
+Update `vite.config.js` with your real repo name before deploying to GitHub Pages.

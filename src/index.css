@@ -6,24 +6,16 @@
   font-weight: 400;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html,
-body,
-#root {
+html, body, #root {
   margin: 0;
   min-height: 100%;
 }
 
-body {
-  min-height: 100vh;
-}
+body { min-height: 100vh; }
 
-code {
-  color: #7dd3fc;
-}
+code { color: #7dd3fc; }
 
 .app-shell {
   min-height: 100vh;
@@ -50,14 +42,8 @@ h1 {
   line-height: 1.2;
 }
 
-.subtitle {
-  margin: 0;
-  color: #94a3b8;
-}
-
-.input-section {
-  margin-top: 28px;
-}
+.subtitle { margin: 0; color: #94a3b8; }
+.input-section { margin-top: 28px; }
 
 label {
   display: block;
@@ -83,15 +69,8 @@ input:focus {
   box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
 }
 
-.hint,
-.footnote {
-  color: #94a3b8;
-}
-
-.hint {
-  margin-top: 10px;
-  font-size: 0.9rem;
-}
+.hint, .footnote { color: #94a3b8; }
+.hint { margin-top: 10px; font-size: 0.9rem; }
 
 .status-box {
   margin-top: 20px;
@@ -107,13 +86,11 @@ input:focus {
   background: rgba(245, 158, 11, 0.12);
   border-color: rgba(245, 158, 11, 0.35);
 }
-
 .status-box.success {
   color: #bbf7d0;
   background: rgba(34, 197, 94, 0.12);
   border-color: rgba(34, 197, 94, 0.35);
 }
-
 .status-box.error {
   color: #fecaca;
   background: rgba(239, 68, 68, 0.12);
@@ -149,16 +126,7 @@ pre {
 }
 
 @media (max-width: 640px) {
-  .card {
-    padding: 24px;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-  }
-
-  input {
-    font-size: 1.1rem;
-    letter-spacing: 0.25rem;
-  }
+  .card { padding: 24px; }
+  h1 { font-size: 1.6rem; }
+  input { font-size: 1.1rem; letter-spacing: 0.25rem; }
 }
