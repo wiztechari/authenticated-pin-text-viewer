@@ -1,8 +1,0 @@
-{
-  "pin": "123456",
-  "status": "success",
-  "message": "Am6uoqsy6NInpOMXidGd8O/dPsYzwuEYoEr9RfBz8bg=",
-  "messageEncoding": "RC5-32/12/16 ECB PKCS7 base64",
-  "caesarShift": 21,
-  "secretKey": "anusuya"
-}
