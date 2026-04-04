@@ -61,7 +61,7 @@ export default function App() {
 
       if (
         data.message &&
-        typeof data.caesarShift === 'number'
+        typeof data.cs === 'number'
       ) {
         const secretKeyToUse = querySecretKey || data.secretKey
         if (!secretKeyToUse) {
@@ -135,11 +135,11 @@ function decryptPinMessage(jsonData) {
   const {
     message,
     secretKey,
-    caesarShift
+    cs
   } = jsonData
 
   const rc5DecryptedText = rc5DecryptBase64EcbPkcs7(message, secretKey, 12, 16)
-  const originalMessage = caesarDecrypt(rc5DecryptedText, caesarShift)
+  const originalMessage = caesarDecrypt(rc5DecryptedText, cs)
 
   return {
     rc5DecryptedText,
