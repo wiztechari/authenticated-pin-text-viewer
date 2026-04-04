@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 
 export default function App() {
-  const API_URL = 'https://random.dog/woof.json'
+  const API_URL = 'https://raw.githubusercontent.com/wiztechari/json/refs/heads/master/quick-m.json'
   const REQUEST_METHOD = 'GET'
   const REQUEST_HEADERS = {
     'Content-Type': 'application/json',
