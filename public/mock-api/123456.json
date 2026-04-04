@@ -1,0 +1,8 @@
+{
+  "pin": "123456",
+  "status": "success",
+  "city": "Bengaluru",
+  "state": "Karnataka",
+  "country": "India",
+  "message": "Local JSON served from the same React app"
+}

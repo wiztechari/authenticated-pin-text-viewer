@@ -1,37 +1,46 @@
-# GitHub PIN Lookup React App
+# GitHub PIN Lookup React App - Local JSON Version
 
-A basic React app that allows the user to enter a 6-digit PIN. As soon as the PIN reaches 6 digits, the app automatically calls an API and displays the response.
+This version does not call any external API.
 
-## Features
-- 6-digit numeric PIN input
-- Auto API call when PIN is complete
-- Loading, success, and error states
-- API response viewer
-- Ready for GitHub Pages deployment
+It fetches JSON files from inside the same React app using files like:
+- public/mock-api/123456.json
+- public/mock-api/654321.json
 
-## Setup
+## Run
 
-1. Install dependencies:
-   npm install
+```bash
+npm install
+npm run dev
+```
 
-2. Start local development:
-   npm run dev
+## Build
 
-3. Build for production:
-   npm run build
-
-## Update API settings
-Edit `src/App.jsx`:
-- `API_URL`
-- `REQUEST_METHOD`
-- request payload format
-
-## GitHub Pages Deployment
-- Push the repo to GitHub
-- Go to **Settings → Pages**
-- Set **Source** to **GitHub Actions**
-- Push to `main`
-- The workflow will build and deploy automatically
+```bash
+npm run build
+```
 
 ## Important
-Your API must allow CORS from your GitHub Pages domain.
+
+Before deploying to GitHub Pages, update `vite.config.js`:
+
+```js
+base: '/your-repo-name/'
+```
+
+Replace `your-repo-name` with your actual repository name.
+
+## How it works
+
+For PIN `123456`, the app fetches:
+
+```text
+/your-repo-name/mock-api/123456.json
+```
+
+For PIN `654321`, the app fetches:
+
+```text
+/your-repo-name/mock-api/654321.json
+```
+
+If the file does not exist, the app shows a not found message.
