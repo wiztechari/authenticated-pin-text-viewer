@@ -98,10 +98,6 @@ export default function App() {
     <div className="app-shell">
       <div className="card">
         <h1>Hari's Encrypted Message Viewer</h1>
-        <p className="subtitle">
-          Enter a 6-digit PIN. The app loads local JSON, decrypts the message,
-          and shows only the original message below.
-        </p>
 
         <div className="input-section">
           <label htmlFor="pinInput">6-Digit PIN</label>
