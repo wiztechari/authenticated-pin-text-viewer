@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useMemo, useRef, useState } from 'react'
 
 export default function App() {
   const [pin, setPin] = useState('')
@@ -8,6 +8,10 @@ export default function App() {
   const abortControllerRef = useRef(null)
 
   const basePath = import.meta.env.BASE_URL.replace(/\/$/, '')
+  const querySecretKey = useMemo(() => {
+    const params = new URLSearchParams(window.location.search)
+    return params.get('secretKey') || ''
+  }, [])
 
   const sanitizePin = (value) => value.replace(/\D/g, '').slice(0, 6)
 
@@ -58,10 +62,17 @@ export default function App() {
       if (
         data.message &&
         data.messageEncoding === 'RC5-32/12/16 ECB PKCS7 base64' &&
-        data.secretKey &&
         typeof data.caesarShift === 'number'
       ) {
-        const decrypted = decryptPinMessage(data)
+        const secretKeyToUse = querySecretKey || data.secretKey
+        if (!secretKeyToUse) {
+          throw new Error('secretKey missing in query param and JSON.')
+        }
+
+        const decrypted = decryptPinMessage({
+          ...data,
+          secretKey: secretKeyToUse,
+        })
         finalMessage = decrypted.originalMessage
       } else if (data.message) {
         finalMessage = data.message
@@ -89,8 +100,8 @@ export default function App() {
       <div className="card">
         <h1>PIN Response Viewer</h1>
         <p className="subtitle">
-          Enter a 6-digit PIN. As soon as all 6 digits are entered, the app loads the local JSON,
-          decrypts the message when needed, and shows only the original message below.
+          Enter a 6-digit PIN. The app loads local JSON, decrypts the message,
+          and shows only the original message below.
         </p>
 
         <div className="input-section">
@@ -106,6 +117,9 @@ export default function App() {
             onChange={handleInputChange}
           />
           <p className="hint">Only numbers are allowed.</p>
+          <p className="hint">
+            Secret key source: <code>{querySecretKey ? 'query param' : 'json fallback'}</code>
+          </p>
         </div>
 
         {status.message && (
