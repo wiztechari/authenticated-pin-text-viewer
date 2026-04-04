@@ -2,6 +2,5 @@
   "pin": "123456",
   "status": "success",
   "message": "P3TL7iktHftdvEr3ejZdd7r9gXQSrmGaLRD99mzkR4E=",
-  "messageEncoding": "RC5-32/12/16 ECB PKCS7 base64",
   "caesarShift": 5
 }

@@ -1,7 +1,0 @@
-{
-  "pin": "654321",
-  "status": "success",
-  "message": "Local JSON served from the same React app",
-  "city": "Chennai",
-  "state": "Tamil Nadu"
-}

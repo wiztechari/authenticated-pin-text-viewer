@@ -61,7 +61,6 @@ export default function App() {
 
       if (
         data.message &&
-        data.messageEncoding === 'RC5-32/12/16 ECB PKCS7 base64' &&
         typeof data.caesarShift === 'number'
       ) {
         const secretKeyToUse = querySecretKey || data.secretKey
@@ -98,7 +97,7 @@ export default function App() {
   return (
     <div className="app-shell">
       <div className="card">
-        <h1>PIN Response Viewer</h1>
+        <h1>Hari's Encrypted Message Viewer</h1>
         <p className="subtitle">
           Enter a 6-digit PIN. The app loads local JSON, decrypts the message,
           and shows only the original message below.
@@ -143,13 +142,8 @@ function decryptPinMessage(jsonData) {
   const {
     message,
     secretKey,
-    caesarShift,
-    messageEncoding
+    caesarShift
   } = jsonData
-
-  if (messageEncoding !== 'RC5-32/12/16 ECB PKCS7 base64') {
-    throw new Error('Unsupported encoding: ' + messageEncoding)
-  }
 
   const rc5DecryptedText = rc5DecryptBase64EcbPkcs7(message, secretKey, 12, 16)
   const originalMessage = caesarDecrypt(rc5DecryptedText, caesarShift)
