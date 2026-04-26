@@ -130,3 +130,18 @@ pre {
   h1 { font-size: 1.6rem; }
   input { font-size: 1.1rem; letter-spacing: 0.25rem; }
 }
+
+.original-message-html {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.original-message-html img {
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin-top: 10px;
+  border-radius: 8px;
+}

@@ -123,7 +123,10 @@ export default function App() {
         {originalMessage && (
           <div className="response-box">
             <h2>Original Message</h2>
-            <pre>{originalMessage}</pre>
+            <div
+              className="original-message-html"
+              dangerouslySetInnerHTML={{ __html: originalMessage }}
+            />
           </div>
         )}
       </div>
