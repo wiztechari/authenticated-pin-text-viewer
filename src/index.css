@@ -134,14 +134,46 @@ pre {
 .original-message-html {
   color: #cbd5e1;
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.6;
   word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.original-message-html p,
+.original-message-html div,
+.original-message-html span {
+  max-width: 100%;
 }
 
 .original-message-html img {
-  max-width: 50%;
-  height: auto;
   display: block;
-  margin-top: 10px;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  margin: 10px 0 0;
   border-radius: 8px;
+  object-fit: contain;
+}
+
+.original-message-html iframe,
+.original-message-html video,
+.original-message-html canvas,
+.original-message-html table {
+  max-width: 100%;
+  width: 100%;
+}
+
+.original-message-html * {
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .original-message-html {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .original-message-html img {
+    border-radius: 6px;
+  }
 }
