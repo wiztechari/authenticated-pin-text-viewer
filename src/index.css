@@ -241,18 +241,6 @@ pre {
 .petal-10 { left: 84%; animation-duration: 15.5s, 4.8s; animation-delay: 1.5s, 0.4s; width: 19px; height: 27px; }
 .petal-11 { left: 91%; animation-duration: 13.5s, 3.9s; animation-delay: 4.5s, 0.9s; }
 .petal-12 { left: 96%; animation-duration: 11.5s, 4.4s; animation-delay: 6.1s, 1.3s; width: 20px; height: 27px; }
-.petal-13 { left: 50%; animation-duration: 12.5s, 5.4s; animation-delay: 6.3s, 1.3s; width: 20px; height: 27px; }
-.petal-14 { left: 51%; animation-duration: 15.5s, 6.4s; animation-delay: 6.6s, 1.3s; width: 12px; height: 27px; }
-.petal-15 { left: 52%; animation-duration: 13.5s, 7.4s; animation-delay: 6.5s, 1.3s; width: 20px; height: 27px; }
-.petal-16 { left: 53%; animation-duration: 14.5s, 8.4s; animation-delay: 6.1s, 1.3s; width: 12px; height: 27px; }
-.petal-17 { left: 54%; animation-duration: 12.5s, 4.4s; animation-delay: 4.2s, 1.3s; width: 14px; height: 21px; }
-.petal-18 { left: 55%; animation-duration: 10.5s, 5.4s; animation-delay: 5.3s, 1.3s; width: 14px; height: 21px; }
-.petal-19 { left: 56%; animation-duration: 12.5s, 6.4s; animation-delay: 5.5s, 1.3s; width: 14px; height: 21px; }
-.petal-20 { left: 57%; animation-duration: 14.5s, 7.4s; animation-delay: 4.8s, 1.3s; width: 14px; height: 21px; }
-.petal-21 { left: 70%; animation-duration: 12.5s, 8.4s; animation-delay: 6.5s, 1.3s; width: 14px; height: 21px; }
-.petal-22 { left: 72%; animation-duration: 11.5s, 9.4s; animation-delay: 6.5s, 1.3s; width: 14px; height: 21px; }
-.petal-23 { left: 60%; animation-duration: 16.5s, 3.4s; animation-delay: 6.5s, 1.3s; width: 14px; height: 21px; }
-.petal-24 { left: 62%; animation-duration: 15.5s, 2.4s; animation-delay: 6.5s, 1.3s; width: 14px; height: 21px; }
 
 @keyframes spinPetals {
   0%, 100% {
