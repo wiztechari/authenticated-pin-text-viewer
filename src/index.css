@@ -34,6 +34,8 @@ code { color: #7dd3fc; }
   border-radius: 24px;
   padding: 32px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  position: relative;
+  z-index: 2;
 }
 
 h1 {
@@ -167,6 +169,89 @@ pre {
   box-sizing: border-box;
 }
 
+.petals-layer {
+  position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.petal {
+  position: absolute;
+  top: -12%;
+  width: 18px;
+  height: 26px;
+  opacity: 0.75;
+  border-radius: 70% 30% 70% 30%;
+  background: linear-gradient(180deg, #ffb7c9 0%, #ff7aa2 55%, #e84d7a 100%);
+  box-shadow: 0 2px 8px rgba(232, 77, 122, 0.22);
+  transform: rotate(12deg);
+  animation-name: fallPetals, swayPetals;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+
+.petal::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.55), transparent 45%);
+}
+
+.petal-1  { left: 4%;  animation-duration: 12s, 4s; animation-delay: 0s, 0s; }
+.petal-2  { left: 12%; animation-duration: 15s, 5s; animation-delay: 2s, 1s; width: 16px; height: 24px; }
+.petal-3  { left: 20%; animation-duration: 11s, 3.5s; animation-delay: 4s, 0.5s; }
+.petal-4  { left: 29%; animation-duration: 16s, 4.5s; animation-delay: 1s, 1.5s; width: 20px; height: 28px; }
+.petal-5  { left: 38%; animation-duration: 13s, 3.8s; animation-delay: 5s, 0.8s; }
+.petal-6  { left: 47%; animation-duration: 14s, 5.5s; animation-delay: 3s, 1.2s; }
+.petal-7  { left: 58%; animation-duration: 10s, 3.2s; animation-delay: 6s, 0.3s; width: 15px; height: 22px; }
+.petal-8  { left: 67%; animation-duration: 17s, 4.2s; animation-delay: 2.5s, 1.1s; }
+.petal-9  { left: 76%; animation-duration: 12.5s, 3.6s; animation-delay: 7s, 0.7s; }
+.petal-10 { left: 84%; animation-duration: 15.5s, 4.8s; animation-delay: 1.5s, 0.4s; width: 19px; height: 27px; }
+.petal-11 { left: 91%; animation-duration: 13.5s, 3.9s; animation-delay: 4.5s, 0.9s; }
+.petal-12 { left: 96%; animation-duration: 11.5s, 4.4s; animation-delay: 6.1s, 1.3s; width: 20px; height: 27px; }
+.petal-13 { left: 50%; animation-duration: 12.5s, 4.4s; animation-delay: 6.3s, 1.3s; width: 20px; height: 27px; }
+.petal-14 { left: 51%; animation-duration: 15.5s, 4.4s; animation-delay: 6.6s, 1.3s; width: 12px; height: 27px; }
+.petal-15 { left: 52%; animation-duration: 13.5s, 4.4s; animation-delay: 6.5s, 1.3s; width: 20px; height: 27px; }
+.petal-16 { left: 53%; animation-duration: 14.5s, 4.4s; animation-delay: 6.1s, 1.3s; width: 12px; height: 27px; }
+.petal-17 { left: 54%; animation-duration: 12.5s, 4.4s; animation-delay: 4.2s, 1.3s; width: 14px; height: 21px; }
+.petal-18 { left: 55%; animation-duration: 10.5s, 4.4s; animation-delay: 5.3s, 1.3s; width: 14px; height: 21px; }
+.petal-19 { left: 56%; animation-duration: 12.5s, 4.4s; animation-delay: 5.5s, 1.3s; width: 14px; height: 21px; }
+.petal-20 { left: 57%; animation-duration: 14.5s, 4.4s; animation-delay: 4.8s, 1.3s; width: 14px; height: 21px; }
+.petal-21 { left: 70%; animation-duration: 12.5s, 4.4s; animation-delay: 6.5s, 1.3s; width: 14px; height: 21px; }
+.petal-22 { left: 70%; animation-duration: 11.5s, 4.4s; animation-delay: 6.5s, 1.3s; width: 14px; height: 21px; }
+.petal-23 { left: 60%; animation-duration: 16.5s, 4.4s; animation-delay: 6.5s, 1.3s; width: 14px; height: 21px; }
+.petal-24 { left: 60%; animation-duration: 15.5s, 4.4s; animation-delay: 6.5s, 1.3s; width: 14px; height: 21px; }
+
+@keyframes fallPetals {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(10deg);
+  }
+  100% {
+    transform: translate3d(-18px, 120vh, 0) rotate(320deg);
+  }
+}
+
+@keyframes swayPetals {
+  0%, 100% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: 14px;
+  }
+  50% {
+    margin-left: -10px;
+  }
+  75% {
+    margin-left: 18px;
+  }
+}
+
 @media (max-width: 640px) {
   .original-message-html {
     font-size: 0.92rem;
@@ -175,5 +260,11 @@ pre {
 
   .original-message-html img {
     border-radius: 6px;
+  }
+
+   .petal {
+    width: 14px;
+    height: 20px;
+    opacity: 0.68;
   }
 }

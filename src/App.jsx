@@ -123,6 +123,32 @@ export default function App() {
         {originalMessage && (
           <div className="response-box">
             <h2>Message</h2>
+             <div className="petals-layer" aria-hidden="true">
+        <span className="petal petal-1"></span>
+        <span className="petal petal-2"></span>
+        <span className="petal petal-3"></span>
+        <span className="petal petal-4"></span>
+        <span className="petal petal-5"></span>
+        <span className="petal petal-6"></span>
+        <span className="petal petal-7"></span>
+        <span className="petal petal-8"></span>
+        <span className="petal petal-9"></span>
+        <span className="petal petal-10"></span>
+        <span className="petal petal-11"></span>
+        <span className="petal petal-12"></span>
+        <span className="petal petal-13"></span>
+        <span className="petal petal-14"></span>
+        <span className="petal petal-15"></span>
+        <span className="petal petal-16"></span>
+        <span className="petal petal-17"></span>
+        <span className="petal petal-18"></span>
+        <span className="petal petal-19"></span>
+        <span className="petal petal-20"></span>
+        <span className="petal petal-21"></span>
+        <span className="petal petal-22"></span>
+        <span className="petal petal-23"></span>
+        <span className="petal petal-24"></span>
+      </div>
             <div
               className="original-message-html"
               dangerouslySetInnerHTML={{ __html: originalMessage }}
