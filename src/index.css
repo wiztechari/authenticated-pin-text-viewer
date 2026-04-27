@@ -139,6 +139,9 @@ pre {
   line-height: 1.6;
   word-break: break-word;
   overflow-wrap: anywhere;
+  text-shadow:
+    0 0 6px rgba(255, 182, 193, 0.55),
+    0 0 12px rgba(255, 192, 203, 0.35);
 }
 
 .original-message-html p,
@@ -155,6 +158,11 @@ pre {
   margin: 10px 0 0;
   border-radius: 8px;
   object-fit: contain;
+   box-shadow:
+     0 0 24px rgba(255, 20, 147, 0.98),
+    0 0 48px rgba(255, 20, 147, 0.82),
+    0 0 72px rgba(255, 105, 180, 0.68),
+    0 0 110px rgba(255, 182, 193, 0.5);
 }
 
 .original-message-html iframe,
